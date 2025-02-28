@@ -18,3 +18,4 @@ endTime = time.time()
 elapsedTime = endTime - startTime
 
 print(f"Execution time: {elapsedTime:.3f} seconds")
+

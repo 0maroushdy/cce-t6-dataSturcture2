@@ -22,3 +22,4 @@ endTime = time.time()
 elTime = endTime - startTime
 
 print(f"The execution time is: {elTime:.4f} seconds, size:{siz}")
+
