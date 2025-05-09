@@ -73,6 +73,7 @@ class RedBlackTree:
         x.parent = y.parent
         if not y.parent:
             self.root = x
+            #------------
         elif y == y.parent.right:
             y.parent.right = x
         else:
@@ -100,7 +101,7 @@ class RedBlackTree:
             else:
                 y = z.parent.parent.left  # init el uncle bta3 z
                 if y.color == 'RED':
-                    z.parent.color = 'BLACK'
+                    z.parent.color = 'BLACK' 
                     y.color = 'BLACK'
                     z.parent.parent.color = 'RED'
                     z = z.parent.parent 
@@ -192,11 +193,16 @@ class DictionaryApp:
         else:
             print("NO, word does not exist")
 
+    def print_stat(self):
+        print(f'Size: {self.tree.get_size()}')
+        print(f'Height: {self.tree.get_height()}')
+        print(f'Black Height: {self.tree.get_black_height()}')
+
 
 app = DictionaryApp("Dictionary.txt")
 print("\n ------------------- Dictionary App -------------------")
 while True:
-    print("Options: \n1- Insert Word  \n2- Look-up Word  \n3- Exit")
+    print("Options: \n1- Insert Word  \n2- Look-up Word \n3- Print Statistics \n4- Exit")
     choice = input("Choose: ").strip()
     if choice == "1":
         word = input("Enter word to insert: ").strip()
@@ -205,6 +211,8 @@ while True:
         word = input("Enter word to look up: ").strip()
         app.lookup_word(word)
     elif choice == "3":
+        app.print_stat()
+    elif choice == "4":
         break
     else:
         print("Invalid option.")

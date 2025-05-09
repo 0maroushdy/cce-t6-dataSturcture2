@@ -8,7 +8,7 @@ class RBNode:
         self.right = None
         self.parent = None
 
-class RedBlackTree:
+class RedBlackTree: 
     def __init__(self):
         self.NIL = RBNode(None)
         self.NIL.color = 'BLACK'
